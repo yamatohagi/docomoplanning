@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="prb-iH-W6X">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="hdb-s9-6g9">
+            <objects>
+                <viewController id="prb-iH-W6X" customClass="ViewController" customModule="docomo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tic-7c-y4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFI-8q-xjj">
+                                <rect key="frame" x="0.0" y="44" width="158" height="382"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="view1"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewa-g6-eP2">
+                                <rect key="frame" x="128" y="257" width="158" height="382"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="view2"/>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="NQv-ce-0m5">
+                                <rect key="frame" x="128" y="44" width="158" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="pZ9-Ar-n5o"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="光有"/>
+                                    <segment title="光無"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.70751082229999995" blue="0.53341419639999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="hikariSelect:" destination="prb-iH-W6X" eventType="valueChanged" id="eVT-Cd-Vux"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kLI-36-mqO" firstAttribute="bottom" secondItem="WFI-8q-xjj" secondAttribute="bottom" constant="436" id="1Y7-rH-cwx"/>
+                            <constraint firstItem="ewa-g6-eP2" firstAttribute="centerY" secondItem="Tic-7c-y4Y" secondAttribute="centerY" id="4MV-u4-hwZ"/>
+                            <constraint firstItem="WFI-8q-xjj" firstAttribute="top" secondItem="kLI-36-mqO" secondAttribute="top" id="7ym-BK-wyr"/>
+                            <constraint firstItem="NQv-ce-0m5" firstAttribute="leading" secondItem="ewa-g6-eP2" secondAttribute="leading" id="IFo-Dp-AzQ"/>
+                            <constraint firstItem="kLI-36-mqO" firstAttribute="bottom" secondItem="ewa-g6-eP2" secondAttribute="bottom" constant="223" id="NK5-Jv-qKp"/>
+                            <constraint firstItem="ewa-g6-eP2" firstAttribute="leading" secondItem="kLI-36-mqO" secondAttribute="leading" constant="128" id="PVN-YO-rI2"/>
+                            <constraint firstItem="NQv-ce-0m5" firstAttribute="top" secondItem="WFI-8q-xjj" secondAttribute="top" id="nly-oJ-EdR"/>
+                            <constraint firstItem="WFI-8q-xjj" firstAttribute="leading" secondItem="Tic-7c-y4Y" secondAttribute="leading" id="pEV-2p-HJD"/>
+                            <constraint firstItem="NQv-ce-0m5" firstAttribute="centerX" secondItem="Tic-7c-y4Y" secondAttribute="centerX" id="rro-yl-az3"/>
+                            <constraint firstItem="kLI-36-mqO" firstAttribute="trailing" secondItem="WFI-8q-xjj" secondAttribute="trailing" constant="256" id="tkm-uq-pkD"/>
+                            <constraint firstItem="NQv-ce-0m5" firstAttribute="trailing" secondItem="ewa-g6-eP2" secondAttribute="trailing" id="vZC-uF-5b9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kLI-36-mqO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bep-c8-CtR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1015.9420289855074" y="48.883928571428569"/>
+        </scene>
+    </scenes>
+</document>
