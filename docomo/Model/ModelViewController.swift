@@ -7,8 +7,6 @@
 import Foundation
 import UIKit
 class ModelViewController {
-    var gbPrice:Int = 0
-    
     func gbPriceSet(_ hikariSelect: Bool,_ sender: TappableSlider) -> (Int, Int) {
         let sliderCount = Int(roundf(sender.value * 1) * 1)
         sender.value = Float(sliderCount)//GbSliderを一定間隔で動かす
@@ -16,41 +14,26 @@ class ModelViewController {
         return (gbPrice, sliderCount)
     }
     func segmentCalcuPrice(_ segment:UISegmentedControl) -> Int{
-        var callCountValue = 0
         var callPrice = 0
-        
         switch segment.selectedSegmentIndex {
-        case 0: callCountValue = 0
-        case 1: callCountValue = 1
-        case 2: callCountValue = 2
+        case 0: callPrice = 0
+        case 1: callPrice = 700
+        case 2: callPrice = 1700
         default:
-            break
-        }
-        if callCountValue == 0 {
             callPrice = 0
-        }else if callCountValue == 1 {
-            callPrice = 700
-        }else if callCountValue == 2 {
-            callPrice = 1700
         }
-        return Int(callPrice)
+      return(callPrice)
     }
     func gbPriceSetHikariCh(_ sliderCount:Int, _ hikariSelect:Bool) -> Int {
         let gbPrice = gbCalcu(hikariSelect, sliderCount)
         return(gbPrice)
     }
-
     func totalPrice(_ callPrice: Int,_ gbPrice: Int) -> Int {
         let totalPrice = callPrice + gbPrice
         return Int(totalPrice)
     }
-    //項目ごとの条件分岐
-    func sliderSetup(_ sender: TappableSlider) -> Int {
-        let roundValue = Int(roundf(sender.value * 1) * 1)
-        sender.value = Float(roundValue)//GbSliderを一定間隔で動かす
-        return(roundValue)
-    }
     func gbCalcu(_ hikariSelect:Bool,_ sliderCount:Int) -> Int{
+        var gbPrice = 0
         if hikariSelect == true{
             if sliderCount == 0 {
                 gbPrice = 0
@@ -83,7 +66,4 @@ class ModelViewController {
         }
         return(gbPrice)
     }
-    
-    
-
 }
