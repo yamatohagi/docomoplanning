@@ -9,13 +9,6 @@ class TappableSlider: UISlider {
     override func beginTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
         return true // どんなtouchでもスライダー調節を行う
     }
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
-        setThumbImage(UIImage(named: "knob.png"), for: [])
-        setMinimumTrackImage(UIImage(named: "slider-active.png"), for: [])
-        setMaximumTrackImage(UIImage(named: "slider.png"), for: [])
-    }
 }
 import UIKit
 class CustomView: UIView {
@@ -101,6 +94,7 @@ class CustomView: UIView {
         gblabel30gb.textColor = UIColor(red: 1, green: 0.647, blue: 0, alpha: 1.0)
         gblabel30gb.font = UIFont(name:"HelveticaNeue-Bold", size: 13.0)
         self.addSubview(gblabel30gb)
+        
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -6,7 +6,16 @@
 //  Copyright © 2019 萩　山登. All rights reserved.
 import UIKit
 import Foundation
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
+    let endlabel = UILabel()
+    let nametext = UITextField()
+    
+    // ブラーエフェクトを作成
+    let blurEffect = UIBlurEffect(style: .dark)
+    
+    // ブラーエフェクトからエフェクトビューを作成
+    lazy var visualEffectView = UIVisualEffectView(effect: blurEffect)
+    
     var hikariSelect = false
     let customView1 = CustomView()
     let customView2 = CustomView()
@@ -20,6 +29,7 @@ class ViewController: UIViewController {
     var gbPrice = [0,0,0,0,0,0]
     var callPrice = [0,0,0,0,0,0]
     var totalPrice = [0,0,0,0,0,0]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let boundSize: CGSize = UIScreen.main.bounds.size
@@ -50,6 +60,39 @@ class ViewController: UIViewController {
         customView6.callSetsegment.addTarget(self, action: #selector(segmentChanged6(_:)), for: UIControl.Event.valueChanged)
         customView6.gbSetslider.addTarget(self, action: #selector(sliderDidChangeValue6(_:)), for: .valueChanged)
     }
+    @IBAction func nametextSet(_ sender: Any) {
+        
+        
+        // エフェクトビューのサイズを画面に合わせる
+        visualEffectView.frame = self.view.frame
+
+        
+        // エフェクトビューを初期viewに追加
+        self.view.addSubview(visualEffectView)
+
+        
+        
+        
+        
+        nametext.frame = CGRect(x: 10, y: 100, width: UIScreen.main.bounds.size.width-20, height: 38)
+        nametext.placeholder = "お客様の名前"
+        nametext.keyboardType = .default
+        // 枠線のスタイルを設定
+        nametext.borderStyle = .roundedRect
+        // 改行ボタンの種類を設定
+        nametext.returnKeyType = .done
+        // テキストを全消去するボタンを表示
+        nametext.clearButtonMode = .always
+        
+        
+        self.view.addSubview(nametext)
+        nametext.becomeFirstResponder()
+        
+        nametext.delegate = self
+   
+        
+    }
+    
     @IBAction func hikariSelect(_ sender: Any) {
         switch (sender as AnyObject).selectedSegmentIndex {
         case 0:
@@ -127,7 +170,29 @@ class ViewController: UIViewController {
         customView5.taxOutlabel.text = "\(totalPrice[4])"
         customView6.taxInlabel.text = "\(Int(1.08 * Double(totalPrice[5])))"
         customView6.taxOutlabel.text = "\(totalPrice[5])"
-        
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       
+            //textField.resignFirstResponder()　←↓どっちでもいい
+            self.view.endEditing(true)
+            self.nametext.removeFromSuperview()
+            self.visualEffectView.removeFromSuperview()
+        
+        endlabel.frame = CGRect(x: self.view.bounds.width/2 - 50, y: 200, width: 100, height: 20)
+        
+            endlabel.text = "保存完了"
+        endlabel.textAlignment = .center
+            endlabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
+            self.view.addSubview(endlabel)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.endlabel.removeFromSuperview()
+        }
+        
+        
+        return true
+    }
+ 
     
 }

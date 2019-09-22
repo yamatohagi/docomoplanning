@@ -42,6 +42,13 @@
                                     <action selector="hikariSelect:" destination="prb-iH-W6X" eventType="valueChanged" id="eVT-Cd-Vux"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRu-bS-MCQ">
+                                <rect key="frame" x="356" y="44" width="31" height="30"/>
+                                <state key="normal" title="保存"/>
+                                <connections>
+                                    <action selector="nametextSet:" destination="prb-iH-W6X" eventType="touchUpInside" id="dgT-x3-7t1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -50,7 +57,9 @@
                             <constraint firstItem="WFI-8q-xjj" firstAttribute="top" secondItem="kLI-36-mqO" secondAttribute="top" id="7ym-BK-wyr"/>
                             <constraint firstItem="NQv-ce-0m5" firstAttribute="leading" secondItem="ewa-g6-eP2" secondAttribute="leading" id="IFo-Dp-AzQ"/>
                             <constraint firstItem="kLI-36-mqO" firstAttribute="bottom" secondItem="ewa-g6-eP2" secondAttribute="bottom" constant="223" id="NK5-Jv-qKp"/>
+                            <constraint firstItem="cRu-bS-MCQ" firstAttribute="top" secondItem="NQv-ce-0m5" secondAttribute="top" id="PTi-dg-Lvj"/>
                             <constraint firstItem="ewa-g6-eP2" firstAttribute="leading" secondItem="kLI-36-mqO" secondAttribute="leading" constant="128" id="PVN-YO-rI2"/>
+                            <constraint firstItem="cRu-bS-MCQ" firstAttribute="leading" secondItem="NQv-ce-0m5" secondAttribute="trailing" constant="70" id="e9Q-7z-NUZ"/>
                             <constraint firstItem="NQv-ce-0m5" firstAttribute="top" secondItem="WFI-8q-xjj" secondAttribute="top" id="nly-oJ-EdR"/>
                             <constraint firstItem="WFI-8q-xjj" firstAttribute="leading" secondItem="Tic-7c-y4Y" secondAttribute="leading" id="pEV-2p-HJD"/>
                             <constraint firstItem="NQv-ce-0m5" firstAttribute="centerX" secondItem="Tic-7c-y4Y" secondAttribute="centerX" id="rro-yl-az3"/>
