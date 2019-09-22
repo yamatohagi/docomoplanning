@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>929814812149-h7ph4eh75l7d6tsjno4ffnadqjp2qujr.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.929814812149-h7ph4eh75l7d6tsjno4ffnadqjp2qujr</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCgkkgqwHhA96Y8C8F2ltWOsSIr-SR-uY4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>929814812149</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ADcom.icloud.la.luce.ymt0326.docomo</string>
+	<key>PROJECT_ID</key>
+	<string>docomoplanning-c627d</string>
+	<key>STORAGE_BUCKET</key>
+	<string>docomoplanning-c627d.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:929814812149:ios:2ac651ef1143d0e49c7cbc</string>
+	<key>DATABASE_URL</key>
+	<string>https://docomoplanning-c627d.firebaseio.com</string>
+</dict>
+</plist>

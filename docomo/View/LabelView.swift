@@ -8,9 +8,8 @@
 
 import Foundation
 import UIKit
-class LabelView:ViewController {
+class LabelView:NSObject {
 
 
-    
 
 }

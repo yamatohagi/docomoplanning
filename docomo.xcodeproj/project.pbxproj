@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3AF1CF61E05B570494EF6188 /* Pods_docomo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9345C446E6395D0486382A7 /* Pods_docomo.framework */; };
 		C308988C232D266C0082EF9D /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C308988B232D266C0082EF9D /* LabelView.swift */; };
+		C35067952337808E00720BF8 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35067942337808E00720BF8 /* Post.swift */; };
 		C3652D112308305D00269623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3652D102308305D00269623 /* AppDelegate.swift */; };
 		C3652D132308305D00269623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3652D122308305D00269623 /* ViewController.swift */; };
 		C3652D162308305D00269623 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3652D142308305D00269623 /* Main.storyboard */; };
@@ -17,12 +18,15 @@
 		C378AEBD232781B100603B88 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C378AEBC232781B100603B88 /* CustomView.swift */; };
 		C39533C0230F656C002D2945 /* CustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C39533BF230F656C002D2945 /* CustomView.xib */; };
 		C39533C6230F85CF002D2945 /* ModelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39533C5230F85CF002D2945 /* ModelViewController.swift */; };
+		C3E7CC1D23373E5D00367712 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C3E7CC1C23373E5D00367712 /* GoogleService-Info.plist */; };
+		C3E7CC1F233748E000367712 /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E7CC1E233748E000367712 /* TimeLineViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1241D71BE06BBC708D32D577 /* Pods-docomo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docomo.debug.xcconfig"; path = "Target Support Files/Pods-docomo/Pods-docomo.debug.xcconfig"; sourceTree = "<group>"; };
 		6A072BF937B9EE7E37CFE209 /* Pods-docomo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docomo.release.xcconfig"; path = "Target Support Files/Pods-docomo/Pods-docomo.release.xcconfig"; sourceTree = "<group>"; };
 		C308988B232D266C0082EF9D /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		C35067942337808E00720BF8 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C3652D0D2308305D00269623 /* docomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3652D102308305D00269623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3652D122308305D00269623 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,6 +37,8 @@
 		C378AEBC232781B100603B88 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		C39533BF230F656C002D2945 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		C39533C5230F85CF002D2945 /* ModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
+		C3E7CC1C23373E5D00367712 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C3E7CC1E233748E000367712 /* TimeLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		F9345C446E6395D0486382A7 /* Pods_docomo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_docomo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -54,7 +60,6 @@
 				1241D71BE06BBC708D32D577 /* Pods-docomo.debug.xcconfig */,
 				6A072BF937B9EE7E37CFE209 /* Pods-docomo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -87,6 +92,8 @@
 		C3652D0F2308305D00269623 /* docomo */ = {
 			isa = PBXGroup;
 			children = (
+				C3E7CC1E233748E000367712 /* TimeLineViewController.swift */,
+				C35067942337808E00720BF8 /* Post.swift */,
 				C39533C7230F85FC002D2945 /* Control */,
 				C39533C4230F8574002D2945 /* Model */,
 				C39533C1230F6575002D2945 /* View */,
@@ -95,6 +102,7 @@
 				C3652D142308305D00269623 /* Main.storyboard */,
 				C3652D192308305E00269623 /* LaunchScreen.storyboard */,
 				C3652D1C2308305E00269623 /* Info.plist */,
+				C3E7CC1C23373E5D00367712 /* GoogleService-Info.plist */,
 			);
 			path = docomo;
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 			files = (
 				C3652D1B2308305E00269623 /* LaunchScreen.storyboard in Resources */,
 				C39533C0230F656C002D2945 /* CustomView.xib in Resources */,
+				C3E7CC1D23373E5D00367712 /* GoogleService-Info.plist in Resources */,
 				C3652D182308305E00269623 /* Assets.xcassets in Resources */,
 				C3652D162308305D00269623 /* Main.storyboard in Resources */,
 			);
@@ -246,6 +255,8 @@
 				C308988C232D266C0082EF9D /* LabelView.swift in Sources */,
 				C39533C6230F85CF002D2945 /* ModelViewController.swift in Sources */,
 				C3652D112308305D00269623 /* AppDelegate.swift in Sources */,
+				C35067952337808E00720BF8 /* Post.swift in Sources */,
+				C3E7CC1F233748E000367712 /* TimeLineViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

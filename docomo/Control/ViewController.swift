@@ -7,8 +7,8 @@
 import UIKit
 import Foundation
 import TOMSMorphingLabel
+import Firebase
 class ViewController: UIViewController, UITextFieldDelegate {
-    let endlabel = TOMSMorphingLabel()
     let nametext = UITextField()
     
     // ブラーエフェクトを作成
@@ -160,20 +160,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        let rootRef = Database.database().reference(fromURL: "https://docomoplanning-c627d.firebaseio.com/").child("group").childByAutoId()
+        let feed = ["name":nametext.text as Any,"sliderCount":sliderCount] as [String:Any]
+        
+        rootRef.setValue(feed)
+        dismiss(animated: true, completion: nil)
         //textField.resignFirstResponder()　←↓どっちでもいい
         self.view.endEditing(true)
         self.nametext.removeFromSuperview()
         self.visualEffectView.removeFromSuperview()
         
+        let endlabel = UILabel()
         endlabel.frame = CGRect(x: self.view.bounds.width/2 - 50, y: 200, width: 100, height: 20)
-        
         endlabel.text = "保存完了"
         endlabel.textAlignment = .center
         endlabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
         self.view.addSubview(endlabel)
+
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.endlabel.removeFromSuperview()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            
+            endlabel.removeFromSuperview()
         }
         return true
     }
