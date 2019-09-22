@@ -11,14 +11,15 @@ class TappableSlider: UISlider {
     }
 }
 import UIKit
+import TOMSMorphingLabel
 class CustomView: UIView {
     var gblabel1gb:UILabel!
     var gblabel3gb:UILabel!
     var gblabel5gb:UILabel!
     var gblabel7gb:UILabel!
     var gblabel30gb:UILabel!
-    var taxInlabel:UILabel!
-    var taxOutlabel:UILabel!
+    var taxInlabel:TOMSMorphingLabel!
+    var taxOutlabel:TOMSMorphingLabel!
     var pricelabel:UILabel!
     var gbSetslider:TappableSlider!
     var callSetsegment:UISegmentedControl!
@@ -42,13 +43,13 @@ class CustomView: UIView {
         callSetsegment.selectedSegmentIndex = 0
         self.addSubview(callSetsegment)// セグメントの選択
         
-        taxOutlabel = UILabel()
+        taxOutlabel = TOMSMorphingLabel()
         taxOutlabel.text = "10000"
         taxOutlabel.textAlignment = .right
         taxOutlabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
         self.addSubview(taxOutlabel)
         
-        taxInlabel = UILabel()
+        taxInlabel = TOMSMorphingLabel()
         taxInlabel.text = "10000"
         taxInlabel.textAlignment = .right
         taxInlabel.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.thin)

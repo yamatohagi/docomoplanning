@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3AF1CF61E05B570494EF6188 /* Pods_docomo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9345C446E6395D0486382A7 /* Pods_docomo.framework */; };
 		C308988C232D266C0082EF9D /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C308988B232D266C0082EF9D /* LabelView.swift */; };
 		C3652D112308305D00269623 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3652D102308305D00269623 /* AppDelegate.swift */; };
 		C3652D132308305D00269623 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3652D122308305D00269623 /* ViewController.swift */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1241D71BE06BBC708D32D577 /* Pods-docomo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docomo.debug.xcconfig"; path = "Target Support Files/Pods-docomo/Pods-docomo.debug.xcconfig"; sourceTree = "<group>"; };
+		6A072BF937B9EE7E37CFE209 /* Pods-docomo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-docomo.release.xcconfig"; path = "Target Support Files/Pods-docomo/Pods-docomo.release.xcconfig"; sourceTree = "<group>"; };
 		C308988B232D266C0082EF9D /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		C3652D0D2308305D00269623 /* docomo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = docomo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3652D102308305D00269623 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +33,7 @@
 		C378AEBC232781B100603B88 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		C39533BF230F656C002D2945 /* CustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomView.xib; sourceTree = "<group>"; };
 		C39533C5230F85CF002D2945 /* ModelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewController.swift; sourceTree = "<group>"; };
+		F9345C446E6395D0486382A7 /* Pods_docomo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_docomo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +41,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AF1CF61E05B570494EF6188 /* Pods_docomo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07304C262F6FC3F49459F0CB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1241D71BE06BBC708D32D577 /* Pods-docomo.debug.xcconfig */,
+				6A072BF937B9EE7E37CFE209 /* Pods-docomo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		3847E3EB7DB2256A7CC42C0A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9345C446E6395D0486382A7 /* Pods_docomo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C3652D042308305D00269623 = {
 			isa = PBXGroup;
 			children = (
 				C3652D0F2308305D00269623 /* docomo */,
 				C3652D0E2308305D00269623 /* Products */,
+				07304C262F6FC3F49459F0CB /* Pods */,
+				3847E3EB7DB2256A7CC42C0A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,9 +132,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3652D1F2308305E00269623 /* Build configuration list for PBXNativeTarget "docomo" */;
 			buildPhases = (
+				FEC822E578F60B8BD28A3647 /* [CP] Check Pods Manifest.lock */,
 				C3652D092308305D00269623 /* Sources */,
 				C3652D0A2308305D00269623 /* Frameworks */,
 				C3652D0B2308305D00269623 /* Resources */,
+				02655F07ADD31B3C507CE8BC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -166,6 +193,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		02655F07ADD31B3C507CE8BC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-docomo/Pods-docomo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-docomo/Pods-docomo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-docomo/Pods-docomo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEC822E578F60B8BD28A3647 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-docomo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C3652D092308305D00269623 /* Sources */ = {
@@ -320,6 +389,7 @@
 		};
 		C3652D202308305E00269623 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1241D71BE06BBC708D32D577 /* Pods-docomo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -338,6 +408,7 @@
 		};
 		C3652D212308305E00269623 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A072BF937B9EE7E37CFE209 /* Pods-docomo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

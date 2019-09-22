@@ -6,8 +6,9 @@
 //  Copyright © 2019 萩　山登. All rights reserved.
 import UIKit
 import Foundation
+import TOMSMorphingLabel
 class ViewController: UIViewController, UITextFieldDelegate {
-    let endlabel = UILabel()
+    let endlabel = TOMSMorphingLabel()
     let nametext = UITextField()
     
     // ブラーエフェクトを作成
@@ -35,17 +36,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let boundSize: CGSize = UIScreen.main.bounds.size
         let width = boundSize.width
         let height = boundSize.height
-        customView1.frame = CGRect(x: width * 0, y: height * 0.15, width: width * 0.31, height: height * 0.37)
+        customView1.frame = CGRect(x: width * 0, y: height * 0.12, width: width * 0.31, height: height * 0.37)
         self.view.addSubview(customView1)
-        customView2.frame = CGRect(x: width * 0.33, y: height * 0.15, width: width * 0.31, height: height * 0.37)
+        customView2.frame = CGRect(x: width * 0.33, y: height * 0.12, width: width * 0.31, height: height * 0.37)
         self.view.addSubview(customView2)
-        customView3.frame = CGRect(x: width * 0.66, y: height * 0.15, width: width * 0.31, height: height * 0.37)
+        customView3.frame = CGRect(x: width * 0.66, y: height * 0.12, width: width * 0.31, height: height * 0.37)
         self.view.addSubview(customView3)
-        customView4.frame = CGRect(x: width * 0, y: height * 0.57, width: width * 0.31, height: height * 0.37)
+        customView4.frame = CGRect(x: width * 0, y: height * 0.51, width: width * 0.31, height: height * 0.37)
         self.view.addSubview(customView4)
-        customView5.frame = CGRect(x: width * 0.33, y: height * 0.57, width: width * 0.31, height: height * 0.37)
+        customView5.frame = CGRect(x: width * 0.33, y: height * 0.51, width: width * 0.31, height: height * 0.37)
         self.view.addSubview(customView5)
-        customView6.frame = CGRect(x: width * 0.66, y: height * 0.57, width: width * 0.31, height: height * 0.37)
+        customView6.frame = CGRect(x: width * 0.66, y: height * 0.51, width: width * 0.31, height: height * 0.37)
         self.view.addSubview(customView6)
         customView1.callSetsegment.addTarget(self, action: #selector(segmentChanged1(_:)), for: UIControl.Event.valueChanged)
         customView1.gbSetslider.addTarget(self, action: #selector(sliderDidChangeValue1(_:)), for: .valueChanged)
@@ -61,19 +62,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         customView6.gbSetslider.addTarget(self, action: #selector(sliderDidChangeValue6(_:)), for: .valueChanged)
     }
     @IBAction func nametextSet(_ sender: Any) {
-        
-        
-        // エフェクトビューのサイズを画面に合わせる
-        visualEffectView.frame = self.view.frame
+        visualEffectView.frame = self.view.frame// エフェクトビューのサイズを画面に合わせる
+        self.view.addSubview(visualEffectView)// エフェクトビューを初期viewに追加
 
-        
-        // エフェクトビューを初期viewに追加
-        self.view.addSubview(visualEffectView)
-
-        
-        
-        
-        
         nametext.frame = CGRect(x: 10, y: 100, width: UIScreen.main.bounds.size.width-20, height: 38)
         nametext.placeholder = "お客様の名前"
         nametext.keyboardType = .default
@@ -84,13 +75,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // テキストを全消去するボタンを表示
         nametext.clearButtonMode = .always
         
-        
         self.view.addSubview(nametext)
         nametext.becomeFirstResponder()
-        
         nametext.delegate = self
-   
-        
     }
     
     @IBAction func hikariSelect(_ sender: Any) {
@@ -173,24 +160,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-       
-            //textField.resignFirstResponder()　←↓どっちでもいい
-            self.view.endEditing(true)
-            self.nametext.removeFromSuperview()
-            self.visualEffectView.removeFromSuperview()
+        //textField.resignFirstResponder()　←↓どっちでもいい
+        self.view.endEditing(true)
+        self.nametext.removeFromSuperview()
+        self.visualEffectView.removeFromSuperview()
         
         endlabel.frame = CGRect(x: self.view.bounds.width/2 - 50, y: 200, width: 100, height: 20)
         
-            endlabel.text = "保存完了"
+        endlabel.text = "保存完了"
         endlabel.textAlignment = .center
-            endlabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
-            self.view.addSubview(endlabel)
+        endlabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
+        self.view.addSubview(endlabel)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.endlabel.removeFromSuperview()
         }
-        
-        
         return true
     }
  
