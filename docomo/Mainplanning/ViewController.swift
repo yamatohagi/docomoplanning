@@ -10,10 +10,8 @@ import TOMSMorphingLabel
 import Firebase
 class ViewController: UIViewController, UITextFieldDelegate {
     let nametext = UITextField()
-    
     // ブラーエフェクトを作成
     let blurEffect = UIBlurEffect(style: .dark)
-    
     // ブラーエフェクトからエフェクトビューを作成
     lazy var visualEffectView = UIVisualEffectView(effect: blurEffect)
     
@@ -30,6 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var gbPrice = [0,0,0,0,0,0]
     var callPrice = [0,0,0,0,0,0]
     var totalPrice = [0,0,0,0,0,0]
+    var callsegmentSelect = [0,0,0,0,0,0]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,7 +132,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
         gbTotalCalcu(sender, hikariSelect, 5)
     }
     func callTotalCalcu(_ segment:UISegmentedControl,_ personNumber:Int) {
-        callPrice[personNumber] = modelViewController.segmentCalcuPrice(segment)
+        let priceAndCallCount = modelViewController.segmentCalcuPrice(segment)
+        callPrice[personNumber] = priceAndCallCount.0
+        callsegmentSelect[personNumber] = priceAndCallCount.1
         totalPrice[personNumber] = modelViewController.totalPrice(callPrice[personNumber], gbPrice[personNumber])
         indicatelabel()
     }
@@ -162,7 +163,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         let rootRef = Database.database().reference(fromURL: "https://docomoplanning-c627d.firebaseio.com/").child("group").childByAutoId()
-        let feed = ["name":nametext.text as Any,"sliderCount":sliderCount] as [String:Any]
+        let feed = ["name":nametext.text as Any,"sliderCount":sliderCount,"hikariselect":hikariSelect,"callsegmentSelect":callsegmentSelect] as [String:Any]
         
         rootRef.setValue(feed)
         dismiss(animated: true, completion: nil)
@@ -177,8 +178,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         endlabel.textAlignment = .center
         endlabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
         self.view.addSubview(endlabel)
-
-        
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             
@@ -186,6 +185,4 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
- 
-    
 }

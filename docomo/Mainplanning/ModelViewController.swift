@@ -13,16 +13,20 @@ class ModelViewController {
         let gbPrice = gbCalcu(hikariSelect, sliderCount)
         return (gbPrice, sliderCount)
     }
-    func segmentCalcuPrice(_ segment:UISegmentedControl) -> Int{
+    func segmentCalcuPrice(_ segment:UISegmentedControl) -> (Int, Int){
         var callPrice = 0
+        var callsegmentSelect = 0
         switch segment.selectedSegmentIndex {
         case 0: callPrice = 0
+            callsegmentSelect = 0
         case 1: callPrice = 700
+            callsegmentSelect = 1
         case 2: callPrice = 1700
+            callsegmentSelect = 2
         default:
             callPrice = 0
         }
-      return(callPrice)
+      return(callPrice, callsegmentSelect)
     }
     func gbPriceSetHikariCh(_ sliderCount:Int, _ hikariSelect:Bool) -> Int {
         let gbPrice = gbCalcu(hikariSelect, sliderCount)

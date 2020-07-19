@@ -11,6 +11,8 @@ import Firebase
 
 class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
+    var cellNumber = Int()
+    
     var displayName = String()
 
     @IBOutlet weak var tableView: UITableView!
@@ -77,14 +79,14 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
                 return
             }
             self.posts = [Post]()
-            for(_,post) in postwSnap!{
+            for(_,group) in postwSnap!{
                 self.posst = Post()
                 
-                if let username = post["name"] as? String{
+                if let username = group["name"] as? String,let hikariSelect = group["hikariselect"] as? Bool{
                     
                     self.posst.username = username
-                    
-                    self.username_Array.append(self.posst.username)
+                    self.posst.hikariSelect = hikariSelect
+//                    self.username_Array.append(self.posst.username)
                 }
                 self.posts.append(self.posst)
                 
@@ -93,6 +95,35 @@ class TimeLineViewController: UIViewController,UITableViewDelegate,UITableViewDa
         }
         
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+           // セルの選択を解除
+           tableView.deselectRow(at: indexPath, animated: true)
+    
+           // 別の画面に遷移
+           performSegue(withIdentifier: "toDataView", sender: nil)
+        
+        cellNumber = Int(indexPath.row)
+        
+ 
+
+        // このメソッドで渡す
+        func prepareForSegue(segue: UIStoryboardSegue, sender: Any?) {
+
+          if segue.identifier == "toDataView" {
+
+            let DataView:DataView = segue.destination as! DataView
+
+            // 変数:遷移先ViewController型 = segue.destinationViewController as 遷移先ViewController型
+            // segue.destinationViewController は遷移先のViewController
+            DataView.sendselect = self.cellNumber
+
+            DataView.sendPost = self.posst
+          }
+
+        }
+       }
+    
     
 
 }

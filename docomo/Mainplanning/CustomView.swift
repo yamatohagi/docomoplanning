@@ -23,6 +23,7 @@ class CustomView: UIView {
     var pricelabel:UILabel!
     var gbSetslider:TappableSlider!
     var callSetsegment:UISegmentedControl!
+    var mobilePledge:UISegmentedControl!
     override init(frame: CGRect) {
         super.init(frame: frame)
         gbSetslider = TappableSlider()
@@ -37,16 +38,20 @@ class CustomView: UIView {
         let params = ["Si", "Li", "Fu"]
         callSetsegment = UISegmentedControl(items: params)
         callSetsegment.tintColor = UIColor(red: 0.13, green: 0.61, blue: 0.93, alpha: 1.0)
-        callSetsegment.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "HiraKakuProN-W6", size: 14.0)!,NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)// 選択されたセグメントのフォントと文字色の設定
         callSetsegment.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "HiraKakuProN-W3", size: 14.0)!,NSAttributedString.Key.foregroundColor: UIColor(red: 0.30, green: 0.49, blue: 0.62, alpha: 1.0)
             ], for: .normal)// セグメントのフォントと文字色の設定
         callSetsegment.selectedSegmentIndex = 0
-        self.addSubview(callSetsegment)// セグメントの選択
+        self.addSubview(callSetsegment)
+        
+        let pledge = ["ケ保","AC"]
+        mobilePledge = UISegmentedControl(items: pledge)
+        mobilePledge.setTitleTextAttributes([NSAttributedString.Key.font : UIFont(name: "HiraKakuProN-W3", size: 14.0)!,NSAttributedString.Key.foregroundColor: UIColor(red: 0.30, green: 0.49, blue: 0.62, alpha: 1.0)], for: .normal)
+        self.addSubview(mobilePledge)
         
         taxOutlabel = TOMSMorphingLabel()
         taxOutlabel.text = "10000"
         taxOutlabel.textAlignment = .right
-        taxOutlabel.font = UIFont.systemFont(ofSize: 20, weight: UIFont.Weight.thin)
+        taxOutlabel.font = UIFont.systemFont(ofSize: 16, weight: UIFont.Weight.thin)
         self.addSubview(taxOutlabel)
         
         taxInlabel = TOMSMorphingLabel()
@@ -113,6 +118,7 @@ class CustomView: UIView {
         taxOutlabel.frame = CGRect(x: viewWidth * 0.45, y: viewHeight * 0.77, width: viewWidth * 0.6
             , height: viewHeight * 0.2)
         gbSetslider.frame = CGRect(x: viewWidth * 0.05, y: viewHeight * 0.1, width: viewWidth * 0.33, height: viewHeight * 0.9)
-        callSetsegment.frame = CGRect(x: viewWidth * 0.05, y: viewHeight * 0, width: viewHeight * 0.35, height: 20)
+        callSetsegment.frame = CGRect(x: viewWidth * 0.02, y: viewHeight * 0, width: viewWidth * 1, height: 20)
+        mobilePledge.frame = CGRect(x: viewWidth * 0.39, y: viewHeight * 0.5, width: viewWidth * 0.7, height: 20)
     }
 }

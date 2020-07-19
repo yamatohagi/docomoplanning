@@ -11,4 +11,5 @@ import UIKit
 class Post: NSObject {
 
     var username:String = String()
+    var hikariSelect:Bool = Bool()
 }
